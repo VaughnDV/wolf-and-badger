@@ -35,21 +35,3 @@ class User(AbstractUser):
 
         """
         return reverse("users:detail", kwargs={"username": self.username})
-
-
-class UserAddress(Model):
-    user = ForeignKey(User, on_delete=CASCADE)
-    street_address = CharField(max_length=256, null=False)
-    area = CharField(max_length=128, null=True, blank=True)
-    post_code = CharField(max_length=24, null=False)
-    country = CharField(max_length=128, null=True, blank=True)
-    created_at = DateTimeField(auto_now_add=True)
-    updated_at = DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name_plural = "user_addresses"
-
-    def __str__(self):
-        return self.street_address
-
-
