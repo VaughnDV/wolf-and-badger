@@ -25,7 +25,7 @@ class User(AbstractUser):
     first_name = None  # type: ignore
     last_name = None  # type: ignore
     phone_number = PhoneField(blank=True, help_text='Contact phone number')
-    addresses = ManyToManyField(Address)
+    addresses = ManyToManyField(Address, null=True, blank=True)
 
     def get_absolute_url(self):
         """Get url for user's detail view.

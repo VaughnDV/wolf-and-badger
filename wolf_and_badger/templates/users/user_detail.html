@@ -42,4 +42,11 @@
 {% endif %}
 
 </div>
+
+  </br>
+<div class="row">
+  <div class="col-sm-12">
+    <a class="btn btn-danger" href="{% url 'users:delete' request.user.username %}">Delete your account</a>
+  </div>
+</div>
 {% endblock content %}

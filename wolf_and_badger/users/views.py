@@ -2,8 +2,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
+from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import DetailView, RedirectView, UpdateView, CreateView
+from django.views.generic import DetailView, RedirectView, UpdateView, CreateView, DeleteView
 from .models import Address
 from .forms import CreateAddressForm
 
@@ -47,7 +48,7 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 user_redirect_view = UserRedirectView.as_view()
 
 
-class CreateAddressView(LoginRequiredMixin, CreateView):
+class CreateAddressView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Address
     login_url = '/login/'
     redirect_field_name = "users:detail"
@@ -59,3 +60,14 @@ class CreateAddressView(LoginRequiredMixin, CreateView):
 
 
 create_address_view = CreateAddressView.as_view()
+
+
+class UserDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = model = User
+    slug_field = "username"
+    slug_url_kwarg = "username"
+    success_url = redirect_field_name = "home"
+    success_message = _("Account successfully deleted")
+
+
+user_delete_view = UserDeleteView.as_view()
