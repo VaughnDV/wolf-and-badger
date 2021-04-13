@@ -67,3 +67,11 @@ Running tests with py.test
   $ docker-compose -f local.yml run django pytest
 
 :License: MIT
+
+
+TODO
+^^^^
+
+- Disconnect SocialAuth once account is deleted
+- Cleaner way of adding and managing addresses for a user
+- Improve test coverage
