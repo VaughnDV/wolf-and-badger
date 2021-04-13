@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.db.models import CharField, Model, ForeignKey, DateTimeField, CASCADE, ManyToManyField
+from django.db.models import CharField, Model, DateTimeField, ManyToManyField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from phone_field import PhoneField
