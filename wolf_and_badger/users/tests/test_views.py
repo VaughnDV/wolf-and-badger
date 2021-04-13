@@ -104,9 +104,6 @@ class TestUserDetailView:
 
 class TestAddressCreateView:
 
-    def dummy_get_response(self, request: HttpRequest):
-        return None
-
     def test_get_success_url(self, user: User, rf: RequestFactory):
         view = CreateAddressView()
         request = rf.get("/fake-url/")
