@@ -1,0 +1,6 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/app/.ipython
+GITHUB_CLIENT_ID=1850317716c28a18ce76
+GITHUB_CLIENT_SECRET=7b00ced58cccdcd0e2b3fc14cf9ba1ef819d58f8
